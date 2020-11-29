@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static org.junit.Assert.fail;
+
 
 public class SearchResultListingPage extends BasePage {
 
@@ -18,8 +20,7 @@ public class SearchResultListingPage extends BasePage {
         String pageSource = driver.getPageSource();
 
         if (pageSource.contains("sonuç bulunamamıştır")){
-            System.out.println("Aratılan kelime ile ilgili sonuç bulunamamıştır.");
-            System.exit(1);
+            fail("Aratılan kelime ile ilgili sonuç bulunamamıştır.");
         }
         else {
             clickBy(FIRST_PRODUCT);

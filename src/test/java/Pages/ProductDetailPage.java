@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 
 public class ProductDetailPage extends BasePage {
@@ -27,7 +28,6 @@ public class ProductDetailPage extends BasePage {
 
         scrollDown();
 
-           try {
                if (driver.findElement(REVIEWS).isDisplayed()) {
                    clickBy(REVIEW_LIKE_BUTTON);
 
@@ -37,12 +37,9 @@ public class ProductDetailPage extends BasePage {
                    assertEquals(reviewRateSuccessMessage, reviewRateMessage);
 
                } else {
-                   throw new Exception();
+                   fail("Değerlendirme bulunmamaktadır.");
                }
-           }
-           catch(Exception e){
-               System.out.println("Değerlendirme bulunmamaktadır.");
-           }
+
 
         return this;
     }
