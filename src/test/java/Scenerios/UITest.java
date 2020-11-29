@@ -9,7 +9,7 @@ public class UITest extends BaseTest{
 
 
         /**
-         * Example for a product with comments
+         * Seçilen üründe daha önce yapılmış yorum varsa ilk yorum için like verilir.
          */
         @Test
         public void uiTest() {
@@ -26,9 +26,12 @@ public class UITest extends BaseTest{
 
         }
 
+        //Aşağıdaki testler ekstradır.
+        //Seçilen search keywordunde sonuç bulunamazsa, veya ürün bulunsa bile, herhangi bir yorum olmadığı durumlarda
+        //kodun nasıl davrandığını gösterecek örneklerdir. Dilerseniz deneyebilirsiniz.
 
         /**
-         * Example for a product without comments
+         * Seçilen ürün herhangi bir yorum bulundurmuyorsa, "değerlendirme bulunamadı" şeklinde döner.
          */
         @Test
         public void uiTest2() {
@@ -45,7 +48,7 @@ public class UITest extends BaseTest{
     }
 
         /**
-         * Example for a search keyword returns no result
+         * Seçilen keyword'de herhangi bir ürün sonucu gelmiyorsa, "Aratılan kelime ile ilgili sonuç bulunamamıştır." seklinde döner.
         */
         @Test
         public void uiTest3() {
