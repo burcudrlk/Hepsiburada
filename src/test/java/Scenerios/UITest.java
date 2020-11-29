@@ -36,7 +36,7 @@ public class UITest extends BaseTest{
         @Test
         public void uiTest2() {
             new HomePage(driver)
-                .search("HBV00000V64MN");
+                .search("HBV000005CW3K");
 
             new SearchResultListingPage(driver)
                 .selectFirstProduct();

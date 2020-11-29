@@ -28,6 +28,7 @@ public class ProductDetailPage extends BasePage {
 
         scrollDown();
 
+           try {
                if (driver.findElement(REVIEWS).isDisplayed()) {
                    clickBy(REVIEW_LIKE_BUTTON);
 
@@ -37,9 +38,12 @@ public class ProductDetailPage extends BasePage {
                    assertEquals(reviewRateSuccessMessage, reviewRateMessage);
 
                } else {
-                   fail("Değerlendirme bulunmamaktadır.");
+                   throw new Exception();
                }
-
+           }
+           catch(Exception e){
+               fail("Değerlendirme bulunmamaktadır.");
+           }
 
         return this;
     }
